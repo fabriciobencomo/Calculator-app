@@ -12,7 +12,10 @@ const CalculatorApp = () => {
     formula,
     number,
     prevNumber,
-    buildNumber
+    buildNumber,
+    clean,
+    toggleSign,
+    deleteLast
   } =useCalculator()
 
   return (
@@ -28,9 +31,9 @@ const CalculatorApp = () => {
 
         {/* Fila de botones */}
         <View style={globalStyles.row}>
-          <CalculatorButton label='C' blackText color={Colors.lightGray} onPress={() => console.log('C')} />
-          <CalculatorButton label='+/-' blackText color={Colors.lightGray} onPress={() => console.log('+/-')} />
-          <CalculatorButton label='del' blackText color={Colors.lightGray} onPress={() => console.log('del')} />
+          <CalculatorButton label='C' blackText color={Colors.lightGray} onPress={() => clean()} />
+          <CalculatorButton label='+/-' blackText color={Colors.lightGray} onPress={() => toggleSign()} />
+          <CalculatorButton label='del' blackText color={Colors.lightGray} onPress={() => deleteLast()} />
           <CalculatorButton label='÷'  onPress={() => console.log('÷')} color={Colors.orange} />
         </View>
 
